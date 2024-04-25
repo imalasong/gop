@@ -354,6 +354,7 @@ func LoadFiles(dir string, files []string, conf *Config) (out *gogen.Package, er
 	if fset == nil {
 		fset = token.NewFileSet()
 	}
+	//解析gop树
 	pkgs, err := parser.ParseEntries(fset, files, parser.Config{
 		ClassKind: mod.ClassKind,
 		Filter:    conf.Filter,
@@ -383,6 +384,7 @@ func LoadFiles(dir string, files []string, conf *Config) (out *gogen.Package, er
 			LookupClass:  mod.LookupClass,
 			LookupPub:    c2go.LookupPub(mod),
 		}
+		// 把gop tree -> go tree
 		out, err = cl.NewPackage("", pkg, clConf)
 		if err != nil {
 			if conf.IgnoreNotatedError {

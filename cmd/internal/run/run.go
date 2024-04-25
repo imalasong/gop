@@ -19,9 +19,6 @@ package run
 
 import (
 	"fmt"
-	"os"
-	"reflect"
-
 	"github.com/goplus/gogen"
 	"github.com/goplus/gop"
 	"github.com/goplus/gop/cl"
@@ -29,6 +26,8 @@ import (
 	"github.com/goplus/gop/x/gocmd"
 	"github.com/goplus/gop/x/gopprojs"
 	"github.com/qiniu/x/log"
+	"os"
+	"reflect"
 )
 
 // gop run
